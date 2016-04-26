@@ -29,6 +29,8 @@ class java (
     default => 'present',
   }
 
+  validate_absolute_path($java_home_base)
+
   $headless_suffix = $java::bool_headless ? {
     true    => '-headless',
     default => '',
